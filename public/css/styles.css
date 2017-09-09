@@ -1,0 +1,390 @@
+/** 
+	
+	styles.css
+
+	CSS stylesheet for My Portfolio web programming final project
+
+**/
+
+/* universal styles (relevant across whole site) */
+
+body {
+	background-color: #eee;
+}
+
+p {
+	text-align: justify;
+}
+
+p.centerText {
+	text-align: center;
+}
+
+nav {
+	width: 75%;
+	margin: auto;
+	margin-top: 10px;
+	box-shadow: 3px 3px 3px #ddd;
+}
+
+.navbar {
+	border-radius: 5px;
+}
+
+.breadcrumb {
+	width: 75%;
+	margin: auto;
+	margin-bottom: 10px;
+	border-radius: 7px;
+	background-color: #fafafa;
+	box-shadow: 2px 2px 2px #ddd;
+}
+
+.breadcrumb li {
+	font-weight: bold;
+}
+
+#main {
+	width: 75%;
+	margin: auto;
+	margin-bottom: 10px;
+	padding: 20px;
+	border-radius: 7px;
+	background-color: #fff;
+	box-shadow: 3px 3px 3px #ddd;
+}
+
+h2.pad-header {
+	margin-bottom: 15px;
+}
+
+.pad-bottom {
+	margin-bottom: 15px;
+}
+
+#footer {
+	width: 30%;
+	margin: auto;
+	margin-bottom: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 3px 3px 3px #ddd;
+	text-align: center;
+}
+
+#footer p {
+	margin-bottom: 0;
+	text-align: center;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.slider-head:hover {
+	text-decoration: none;
+}
+
+.slider-item {
+	display: none;
+}
+
+.screenshots {
+	border: 1px dotted #ddd;
+	border-radius: 5px;
+	padding: 12px 0;
+	margin-bottom: 15px;
+}
+
+.year-grouping {
+	border: 1px dotted #ddd;
+	border-radius: 5px;
+	padding: 12px;
+	margin-bottom: 15px;
+}
+
+.modal-caption {
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 0;
+}
+
+/* universal style for desktops */
+@media screen and (min-width: 992px) {
+	
+	.mob-only {
+		display: none;
+	}
+
+}
+
+/* universal style for low-res and tablet */
+@media screen and (max-width: 991px) {
+	
+	nav, .breadcrumb, #main {
+		width: 91.5%;
+	}
+
+	#footer {
+		width: 50%;
+	}
+
+	.optional {
+		display: none;
+	}
+
+	.sm-show {
+		display: initial;
+	}
+
+}
+
+/* universal style for mobile */
+@media screen and (max-width: 767px) {
+	
+	nav {
+		width: 100%;
+		margin-top: 0;
+		opacity: 0.95;
+	}
+
+	.navbar {
+		border-radius: 0;
+	}
+
+	.breadcrumb, #main, #footer {
+		width: 95%;
+	}
+
+	.breadcrumb {
+		margin-top: 55px;
+	}
+
+	#index-spacing-mobile {
+		margin-top: 55px;
+	}
+
+	.screenshots, .year-grouping {
+		border: none;
+	}
+
+	.optional {
+		display: none;
+	}
+
+	h1 {
+		font-size: 30px;
+	}
+
+	h2 {
+		font-size: 26px;
+	}
+
+	h3 {
+		font-size: 22px;
+	}
+
+}
+
+/* index.html */
+
+.jumbotron {
+	border-radius: 7px;
+	padding-top: 24px;
+	padding-bottom: 24px;
+	margin-bottom: 15px;
+}
+
+.jumbotron h1 {
+	font-size: 3.2em;
+}
+
+@media screen and (max-width: 767px) {
+	
+	.jumbotron {
+		padding: 0;
+		margin-bottom: 7px;
+	}
+
+	.jumbotron h1 {
+		font-size: 2.3em;
+	}
+
+	.jumbotron h1 small {
+		font-size: 0.6em;
+	}
+
+	.jumbotron p {
+		font-size: 1.2em;
+	}
+
+}
+
+/* cv.html */
+
+.remove-padding {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.cv-list-dates {
+    counter-reset: index;
+}
+
+.cv-list-dates > li:nth-child(2n) {
+    counter-increment: index;
+    list-style: none;
+}
+
+.cv-list-dates > li:nth-child(2n):before {
+    content: "";
+}
+
+.cv-list-dates > li {
+	padding-left: 0;
+}
+
+.cv-list > li {
+	margin-bottom: 10px;
+	list-style-type: square;
+}
+
+#references {
+	text-align: center;
+	margin-top: 25px;
+	margin-bottom: 10px;
+}
+
+#references p {
+	display: inline;
+	padding: 3px 10px;
+}
+
+@media screen and (min-width: 413px) {
+	
+	#references p {
+		border: 1px solid black;
+	}
+
+}
+
+.cv-list .slider-head {
+	display: none;
+}
+
+@media screen and (max-width: 991px) {
+
+	.cv-list, .cv-list ul {
+		padding-left: 6%;
+	}
+
+	.cv-list .slider-head {
+		display: initial;
+	}
+
+}
+
+/* virtualoso.php */
+
+.description li {
+	list-style-type: square;
+}
+
+.download-links a {
+	min-width: 12.5%;
+}
+
+@media screen and (max-width: 767px) {
+	
+	.download-links {
+		width: 75%;
+		text-align: center;
+	}
+
+	.download-links a {
+		width: initial;
+	}
+
+}
+
+/* introdm.html */
+
+.dm-screenshots img {
+	cursor: pointer;
+}
+
+.grey {
+	color: gray;
+}
+
+.cw2-modal {
+	text-align: center;
+}
+
+@media screen and (max-width: 991px) {
+
+	.dm-screenshots img {
+		cursor: initial;
+	}
+
+}
+
+/* cs50.html */
+
+.cs50-screens img {
+	cursor: pointer;
+}
+
+@media screen and (max-width: 991px) {
+
+	.cs50-screens img {
+		cursor: initial;
+	}
+
+}
+
+/* volunteering.html */
+
+#vw-screen, #vr-screen {
+	cursor: pointer;
+}
+
+@media screen and (max-width: 991px) {
+
+	#vw-screen {
+		margin-bottom: 15px;
+	}
+
+	#vw-screen, #vr-screen {
+		cursor: initial;
+	}
+
+}
+
+/* hobbies.html */ 
+
+.sc-iframes {
+	width: 100%;
+	height: 166px;
+	overflow: hidden;
+	border: none;
+}
+
+/* contact.html */
+
+#contact-form {
+	margin-left: -10px;
+	margin-right: -10px;
+}
+
+.twitter-timeline {
+	height: 500px;
+}
+
+/* report.html */
+
+.report-list li {
+	list-style-type: square;
+}

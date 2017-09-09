@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>How It Works - CS50 CryptoPlus</title>
+    <link type="text/css" rel="stylesheet" href="css/bootswatch/cerulean.min.css">
+    <link type="text/css" rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <!-- render the header -->
+    <script type="text/javascript" src="js/header.js"></script>
+    <!-- main body content -->
+    <div id="main">
+      <h1>How do ciphers and hash functions work?</h1>
+      <hr>
+      <p>Do you want to learn about how each of the ciphers on this website works?</p>
+      <p>Click on any of the headings below to find out.</p>
+      <small>All information courtesy of <a href="https://en.wikipedia.org/">Wikipedia</a>.</small>
+      <hr>
+      <h2>Substitution Ciphers</h2>
+      <p>In cryptography, a substitution cipher is a method of encoding by which units of plaintext are replaced with ciphertext, according to a regular system; the "units" may be single letters (the most common), pairs of letters, triplets of letters, mixtures of the above, and so forth. The receiver deciphers the text by performing an inverse substitution.</p>
+      <p>There are a number of different types of substitution cipher. If the cipher operates on single letters, it is termed a simple substitution cipher; a cipher that operates on larger groups of letters is termed polygraphic. A monoalphabetic cipher uses fixed substitution over the entire message, whereas a polyalphabetic cipher uses a number of substitutions at different positions in the message, where a unit from the plaintext is mapped to one of several possibilities in the ciphertext and vice versa.</p>
+      <ul>
+        <li>
+          <h3 class="crypt_head"><a>Atbash</a></h3>
+          <div class="crypt_item">
+            <p>Atbash is a simple substitution cipher for the Hebrew alphabet. It consists in substituting aleph (the first letter) for tav (the last), beth (the second) for shin (one before last), and so on, reversing the alphabet. Hence the name, Aleph-Tav-Beth-Shin (אתבש). In the Book of Jeremiah, לב קמי Lev Kamai (51:1) is Atbash for כשדים Kasdim (Chaldeans), and ששך Sheshakh (25:26; 51:41) is Atbash for בבל Bavel (Babylon). It has been associated with the esoteric methodologies of Jewish mysticism's interpretations of Hebrew religious texts as in the Kabbalah.</p>
+            <p>An Atbash cipher for the Latin alphabet would be as follows:</p>
+            <code>Plain: &nbsp;abcdefghijklmnopqrstuvwxyz</code><br>
+            <code>Cipher: ZYXWVUTSRQPONMLKJIHGFEDCBA</code>
+            <p style="margin-top:1em;"><a href="https://en.wikipedia.org/wiki/Atbash">For more information, please see the original article on Wikipedia.</a></p>
+          </div>
+        </li>
+        <li>
+          <h3 class="crypt_head"><a>Beaufort</a></h3>
+          <div class="crypt_item">
+            <p>The Beaufort cipher, created by Sir Francis Beaufort, is a substitution cipher similar to the Vigenère cipher, with a slightly modified enciphering mechanism and tableau. It's most famous application was in a rotor-based cipher machine, the Hagelin M-209.</p>
+            <p>To encrypt, first choose the plaintext character from the top row of the tableau, call this column P. Secondly, travel down column P to the corresponding key Letter K. Finally, move directly left from the Key letter to the left edge of the tableau, the CipherText encryption of Plaintext P with Key K will be there. For example if encrypting Plain text character "d" with Key "m" the steps would be:</p>
+            <ol>
+              <li>find the column with "d" on the top,</li>
+              <li>travel down that column to find Key "m",</li>
+              <li>travel to the left edge of the tableau to find the CipherText letter ("J" in this case).</li>
+            </ol>
+            <p style="margin-top: 1em;">To decrypt, the process is reversed. The Beaufort cipher is a reciprocal cipher, that is, the decryption and encryption algorithms are the same.</p>
+            <p><a href="https://en.wikipedia.org/wiki/Beaufort_cipher">For more information, please see the original article on Wikipedia.</a></p>
+          </div>
+        </li>
+        <li>
+          <h3 class="crypt_head"><a>Caesar</a></h3>
+          <div class="crypt_item">
+            <p>In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code or Caesar shift, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence.</p>
+            <p>The encryption step performed by a Caesar cipher is often incorporated as part of more complex schemes, such as the Vigenère cipher, and still has modern application in the ROT13 system. As with all single alphabet substitution ciphers, the Caesar cipher is easily broken and in modern practice offers essentially no communication security.</p>
+            <p><a href="https://en.wikipedia.org/wiki/Caesar_shift">For more information, please see the original article on Wikipedia.</a></p>
+          </div>
+        </li>
+        <li>
+          <h3 class="crypt_head"><a>Mixed Alphabet</a></h3>
+          <div class="crypt_item">
+            <p>The cipher alphabet may be shifted or reversed (creating the Caesar and Atbash ciphers, respectively) or scrambled in a more complex fashion, in which case it is called a mixed alphabet or deranged alphabet. Traditionally, mixed alphabets may be created by first writing out a keyword, removing repeated letters in it, then writing all the remaining letters in the alphabet in the usual order.</p>
+            <p>Using this system, the keyword "zebras" gives us the following alphabets:</p>
+            <code>Plain: &nbsp;abcdefghijklmnopqrstuvwxyz</code><br>
+            <code>Cipher: ZEBRASCDFGHIJKLMNOPQTUVWXY</code>
+            <p style="margin-top:1em;"><a href="https://en.wikipedia.org/wiki/Substitution_alphabet">For more information, please see the original article on Wikipedia.</a></p>
+          </div>
+        </li>
+        <li>
+          <h3 class="crypt_head"><a>Vigènere</a></h3>
+          <div class="crypt_item">
+            <p>The Vigenère cipher is a method of encrypting alphabetic text by using a series of different Caesar ciphers based on the letters of a keyword. It is a simple form of polyalphabetic substitution.</p>
+            <p>Though the cipher is easy to understand and implement, for three centuries it resisted all attempts to break it; this earned it the description le chiffre indéchiffrable (French for 'the indecipherable cipher').</p>
+            <p>In the Vigenère cipher, the first row of the tableau is filled out with a copy of the plaintext alphabet, and successive rows are simply shifted one place to the left. (Such a simple tableau is called a tabula recta, and mathematically corresponds to adding the plaintext and key letters, modulo 26.) A keyword is then used to choose which ciphertext alphabet to use. Each letter of the keyword is used in turn, and then they are repeated again from the beginning. So if the keyword is 'CAT', the first letter of plaintext is enciphered under alphabet 'C', the second under 'A', the third under 'T', the fourth under 'C' again, and so on. In practice, Vigenère keys were often phrases several words long.</p>
+            <p><a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher">For more information, please see the original article on Wikipedia.</a></p>
+          </div>
+        </li>
+      </ul>
+      <h2>Cryptographic Hash Functions</h2>
+      <p>A cryptographic hash function is a hash function that takes an arbitrary block of data and returns a fixed-size bit string, the cryptographic hash value, such that any (accidental or intentional) change to the data will (with very high probability) change the hash value. The data to be encoded are often called the message, and the hash value is sometimes called the message digest or simply digest.</p>
+      <ul>
+        <li>
+          <h3 class="crypt_head"><a>MD5</a></h3>
+          <div class="crypt_item">
+            <p>The MD5 message-digest algorithm is a widely used cryptographic hash function producing a 128-bit (16-byte) hash value, typically expressed in text format as a 32 digit hexadecimal number. MD5 has been utilized in a wide variety of cryptographic applications, and is also commonly used to verify data integrity.</p>
+            <p>MD5 was designed by Ron Rivest in 1991 to replace an earlier hash function, MD4. The source code in RFC 1321 contains a "by attribution" RSA license.</p>
+            <p>In 1996 a flaw was found in the design of MD5. While it was not deemed a fatal weakness at the time, cryptographers began recommending the use of other algorithms, such as SHA-1—which has since been found to be vulnerable as well. In 2004 it was shown that MD5 is not collision resistant. As such, MD5 is not suitable for applications like SSL certificates or digital signatures that rely on this property for digital security. Also in 2004 more serious flaws were discovered in MD5, making further use of the algorithm for security purposes questionable; specifically, a group of researchers described how to create a pair of files that share the same MD5 checksum. Further advances were made in breaking MD5 in 2005, 2006, and 2007. In December 2008, a group of researchers used this technique to fake SSL certificate validity, and CMU Software Engineering Institute now says that MD5 "should be considered cryptographically broken and unsuitable for further use", and most U.S. government applications now require the SHA-2 family of hash functions. In 2012, the Flame malware exploited the weaknesses in MD5 to fake a Microsoft digital signature.</p>
+            <p><a href="https://en.wikipedia.org/wiki/MD5">For more information, please see the original article on Wikipedia.</a></p>
+          </div>
+        </li>
+        <li>
+          <h3 class="crypt_head"><a>SHA-1</a></h3>
+          <div class="crypt_item">
+            <p>In cryptography, SHA-1 is a cryptographic hash function designed by the United States National Security Agency and is a U.S. Federal Information Processing Standard published by the United States NIST.<p>
+            <p>SHA-1 produces a 160-bit (20-byte) hash value. A SHA-1 hash value is typically rendered as a hexadecimal number, 40 digits long.</p>
+            <p>SHA stands for "secure hash algorithm". The four SHA algorithms are structured differently and are named SHA-0, SHA-1, SHA-2, and SHA-3. SHA-0 is the original version of the 160-bit hash function published in 1993 under the name "SHA": it was not adopted by many applications. Published in 1995, SHA-1 is very similar to SHA-0, but alters the original SHA hash specification to correct alleged weaknesses. SHA-2, published in 2001, is significantly different from the SHA-1 hash function.</p>
+            <p>SHA-1 is the most widely used of the existing SHA hash functions, and is employed in several widely used applications and protocols.</p>
+            <p><a href="https://en.wikipedia.org/wiki/SHA-1">For more information, please see the original article on Wikipedia.</a></p>
+          </div>
+        </li>
+        <li>
+          <h3 class="crypt_head"><a>SHA-2</a></h3>
+          <div class="crypt_item">
+            <p>SHA-2 is a set of cryptographic hash functions (SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, SHA-512/256) designed by the U.S. National Security Agency (NSA) and published in 2001 by the NIST as a U.S. Federal Information Processing Standard (FIPS). SHA stands for Secure Hash Algorithm. SHA-2 includes a significant number of changes from its predecessor, SHA-1. SHA-2 currently consists of a set of six hash functions with digests that are 224, 256, 384 or 512 bits.</p>
+            <p>SHA-256 and SHA-512 are novel hash functions computed with 32-bit and 64-bit words, respectively. They use different shift amounts and additive constants, but their structures are otherwise virtually identical, differing only in the number of rounds. SHA-224 and SHA-384 are simply truncated versions of the first two, computed with different initial values. SHA-512/224 and SHA-512/256 are also truncated versions of SHA-512, but the initial values are generated using the method described in FIPS PUB 180-4. The SHA-2 family of algorithms are patented in US 6829355. The United States has released the patent under a royalty-free license.</p>
+            <p>In 2005, security flaws were identified in SHA-1, namely that a mathematical weakness might exist, indicating that a stronger hash function would be desirable. Although SHA-2 bears some similarity to the SHA-1 algorithm, these attacks have not been successfully extended to SHA-2.</p>
+            <p><a href="https://en.wikipedia.org/wiki/SHA-2">For more information, please see the original article on Wikipedia.</a></p>
+          </div>
+        </li>
+        <li>
+          <h3 class="crypt_head"><a>SHA-3</a></h3>
+          <div class="crypt_item">
+            <p>SHA-3, a subset of the cryptographic primitive family Keccak, is a cryptographic hash function designed by Guido Bertoni, Joan Daemen, Michaël Peeters, and Gilles Van Assche, building upon RadioGatún.</p>
+            <p>On October 2, 2012, Keccak was selected as the winner of the NIST hash function competition. SHA-3 is not meant to replace SHA-2, as no significant attack on SHA-2 has been demonstrated. Because of the successful attacks on MD5 and SHA-0 and theoretical attacks on SHA-1 and SHA-2, NIST perceived a need for an alternative, dissimilar cryptographic hash, which became SHA-3.</p>
+            <p>SHA-3 uses the sponge construction in which message blocks are XORed into the initial bits of the state, which is then invertibly permuted. In the version used in SHA-3, the state consists of a 5×5 array of 64-bit words, 1600 bits total. The authors claim 12.5 cycles per byte on an Intel Core 2 CPU. However, in hardware implementations it is notably faster than all other finalists.</p>
+            <p>Keccak's authors have proposed additional, not-yet-standardized uses for the function, including an authenticated encryption system and a "tree" hash for faster hashing on certain architectures. Keccak is also defined for smaller power-of-2 word sizes w down to 1 bit (25 bits total state). Small state sizes can be used to test cryptanalytic attacks, and intermediate state sizes (e.g., from w=4, 100 bits, to w=32, 800 bits) could potentially provide practical, lightweight alternatives.</p>
+            <p><a href="https://en.wikipedia.org/wiki/SHA-3">For more information, please see the original article on Wikipedia.</a></p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- render the footer -->
+    <script type="text/javascript" src="js/footer.js"></script>
+    <!-- page scripts -->
+    <script type="text/javascript" src="js/scripts.js"></script>
+  </body>
+</html>

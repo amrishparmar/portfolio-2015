@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CS50 CryptoPlus</title>
+    <link type="text/css" rel="stylesheet" href="css/bootswatch/cerulean.min.css">
+    <link type="text/css" rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/crypt.js"></script>
+    <script type="text/javascript" src="js/CryptoJS/rollups/md5.js"></script>
+    <script type="text/javascript" src="js/CryptoJS/rollups/sha1.js"></script>
+    <script type="text/javascript" src="js/CryptoJS/rollups/sha256.js"></script>
+    <script type="text/javascript" src="js/CryptoJS/rollups/sha512.js"></script>
+    <script type="text/javascript" src="js/CryptoJS/rollups/sha3.js"></script>
+  </head>
+
+  <body>
+    <!-- render the header -->
+    <script type="text/javascript" src="js/header.js"></script>
+    <!-- main body content -->
+    <div id="main">
+      <h1>Welcome to <strong>CS50 CryptoPlus!</strong></h1>
+      <hr>
+      <p>Have you ever wanted to send messages to your friends and family without other people knowing the secret contents? Well now you can with CryptoPlus!</p>
+      <p>You can use a variety of different of cryptographic ciphers and hashes to encode and decode your messages. Simply enter your message, choose your method and hit the button. <strong>It's that easy!</strong></p>
+      <hr>
+      <!-- text entry box -->
+      <label for="input">Enter text to encrypt, decrypt or hash:</label>
+      <textarea id="input" class="textio">Enter text here</textarea>
+      <div id="action_type" class="form-group">
+        <input type="radio" name="edh" value="encrypt">Encrypt
+        <input type="radio" name="edh" value="decrypt">Decrypt
+        <input type="radio" name="edh" value="hash">Hash
+      </div>
+      <br>
+      <!-- algorithm choice dropdown -->
+      <div id="method_options" class="form-group">
+        <div id="crypt_method" class="options form-group">
+          <p>Choose which <span></span> method to use:</p>
+          <select id="crypt">
+            <option value="atbash">Atbash (Reversed Alphabet)</option>
+            <option value="beaufort">Beaufort</option>
+            <option value="caesar">Caesar</option>
+            <option value="mixed">Mixed Alphabet</option>
+            <option value="vigenere">Vigènere</option>
+          </select>
+          <div id="secret_key" class="form-group">
+            <p>Enter a secret key <a id="key_guide" title="Secret Key Instructions" data-toggle="popover" data-placement="right" data-container="body" data-content="
+              <p><strong>Caesar</strong>: Please enter a positive whole number to represent the shift amount you want to use, e.g. 1, 4, 23.</p>
+              <p><strong>All others</strong>: Please enter a string that only contains letters of the alphabet (without spaces), e.g. foo, bAcoN, RedRum.</p>
+              ">[?]</a> :</p>
+            <input type="text" name="secret_key">
+          </div>
+        </div>
+        <div id="hash_method" class="options form-group" >
+          <p>Choose which hash method to use:</p>
+          <select id="hash">
+            <option value="md5">MD5</option>
+            <option value="sha1">SHA-1</option>
+            <option value="sha256">SHA-256</option>
+            <option value="sha512">SHA-512</option>
+            <option value="sha3">SHA-3</option>
+          </select>
+        </div>
+      </div>
+      <button id="submit" class="btn btn-primary">Submit</button>
+      <div id="key_error" class="alert alert-danger">
+        <button type="button" class="close">×</button>
+        <h4>Secret Key Error</h4>
+        <p>You have entered an invalid secret key.</p>
+        <p><strong>Caesar</strong>: Please enter a positive whole number to represent the shift amount you want to use, e.g. 1, 4, 23.</p>
+        <p><strong>All others</strong>: Please enter a string that only contains letters of the alphabet (without spaces), e.g. foo, bAcoN, RedRum.</p>
+      </div>
+      <hr>
+      <!-- text output -->
+      <label for="output">Your converted text:</label>
+      <textarea id="output" class="textio"></textarea>
+      <input id="groups_five" type="checkbox" name="groups_five"> Group into blocks of five
+    </div>
+    <!-- render the footer -->
+    <script type="text/javascript" src="js/footer.js"></script>
+    <!-- page scripts -->
+    <script type="text/javascript" src="js/scripts.js"></script>
+  </body>
+</html>
